@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Dafeiyu CLI Progress",
+    "description": "Shows live progress for git clone, downloads, uploads, and other commands below the composer."
+  }
+}

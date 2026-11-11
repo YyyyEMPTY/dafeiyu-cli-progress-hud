@@ -1,0 +1,56 @@
+{
+  "name": "dafeiyu-cli-progress-hud",
+  "version": "0.1.0",
+  "description": "大肥鱼命令行进度条 — live CLI progress strips for shell jobs in the DeepSeek Harness Web UI.",
+  "license": "MIT",
+  "author": "YEMPTY (溯)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YyyyEMPTY/dafeiyu-cli-progress-hud.git"
+  },
+  "homepage": "https://github.com/YyyyEMPTY/dafeiyu-cli-progress-hud#readme",
+  "bugs": {
+    "url": "https://github.com/YyyyEMPTY/dafeiyu-cli-progress-hud/issues"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "plugin",
+    "progress",
+    "cli"
+  ],
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node test/parse-progress.test.mjs"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "PUBLISHING.md",
+    "CHANGELOG.md",
+    "test/"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-api-job-controller",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}
